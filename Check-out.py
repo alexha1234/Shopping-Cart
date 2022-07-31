@@ -12,3 +12,5 @@ for csv_file in CSV_FILES:
         print("DOWNLOADING", csv_file["filepath"])
         url = csv_file["url"]
         !wget -q $url 
+
+result = read_csv("products.csv")
