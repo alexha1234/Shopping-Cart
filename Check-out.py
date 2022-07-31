@@ -11,7 +11,4 @@ for csv_file in CSV_FILES:
     if not os.path.isfile(csv_file["filepath"]):
         print("DOWNLOADING", csv_file["filepath"])
         url = csv_file["url"]
-        # FYI: this wget command is a terminal command, NOT python
-        # ... in colab, we can execute terminal commands by prefixing them with an exclamation point
-        # ... students are not responsible for knowing terminal commands like this
         !wget -q $url 
