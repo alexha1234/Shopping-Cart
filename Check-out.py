@@ -13,5 +13,9 @@ for csv_file in CSV_FILES:
         url = csv_file["url"]
         !wget -q $url 
 
-result = read_csv("products.csv")
-print(result)
+df = read_csv("products.csv")
+print(len(df))
+print(df.head())
+
+for index, row in df.iterrows():
+    print(row["name"], to_usd(row["price"]))
