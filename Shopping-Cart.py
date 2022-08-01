@@ -50,4 +50,4 @@ while True:
         selected_products.append(matching_product)
         # continue the while loop
 
-print("SELECTED PRODUCT(S):" + matching_product["name"] + "" + str(matching_product["price"]))
+print("SELECTED PRODUCT(S):" + matching_product["name"] + " " + str(matching_product["price"]))
