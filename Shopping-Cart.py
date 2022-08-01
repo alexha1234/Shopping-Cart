@@ -36,7 +36,8 @@ def to_usd(my_price):
     """
     return f"${my_price:,.2f}" #> $12,000.71
 
-selected_ids = [] 
+selected_ids = []
+matching_products = [] 
 total_price = 0
 from datetime import datetime #Allowing us to print date and time
 now = datetime.now()
@@ -52,8 +53,10 @@ for selected_id in selected_ids:
     matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
     matching_product = matching_products[0] # this will trigger an IndexError if there are no matching products
     total_price = total_price + matching_product["price"]
-    print("SELECTED PRODUCT(S):" + matching_product["name"] + " " + str(to_usd(matching_product["price"])))
-
+    matching_products.append(matching_products)
+    #print("SELECTED PRODUCT(S):" + matching_product["name"] + " " + str(to_usd(matching_product["price"])))
+#can not get this to work outside of loop for now
+print(matching_products["name"] + " " + str(to_usd(matching_products["price"])))
 tax = matching_product["price"]*.0875    
 print("---")
 print("Thank you for shopping at Al's!")
