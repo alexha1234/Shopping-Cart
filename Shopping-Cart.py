@@ -39,7 +39,7 @@ def to_usd(my_price):
 selected_products = [] 
 
 while True:
-    selected_id = input("Please input a product id, or 'DONE': " ) #will be a stroing
+    selected_id = input("Please input a product id, or 'DONE': " ) #will be a string
 
     if selected_id.upper() == "DONE":
         break # break out of the while loop 
@@ -50,4 +50,4 @@ while True:
         selected_products.append(matching_product)
         # continue the while loop
 
-print(len(selected_products))
+print("SELECTED PRODUCT(S):" + matching_product["name"] + "" + str(matching_product["price"]))
