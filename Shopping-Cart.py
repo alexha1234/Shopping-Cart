@@ -51,4 +51,4 @@ while True:
         total_price = total_price + matching_product["price"]
         print("SELECTED PRODUCT(S):" + matching_product["name"] + " " + str(matching_product["price"]))
 
-print("TOTAL PRICE:" + str(to_usd(total_price))
+print("TOTAL PRICE:" + str(to_usd(total_price)))
