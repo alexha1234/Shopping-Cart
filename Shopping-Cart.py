@@ -48,6 +48,6 @@ while True:
         matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
         matching_product = matching_products[0] # this will trigger an IndexError if there are no matching products
         selected_products.append(matching_product)
-        # continue the while loop
+        print("SELECTED PRODUCT(S):" + matching_product["name"] + " " + str(matching_product["price"]))
 
-print("SELECTED PRODUCT(S):" + matching_product["name"] + " " + str(matching_product["price"]))
+
