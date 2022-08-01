@@ -38,6 +38,8 @@ def to_usd(my_price):
 
 selected_ids = [] 
 total_price = 0
+from datetime import datetime #Allowing us to print date and time
+now = datetime.now()
 while True:
     selected_id = input("Please input a product id, or 'DONE': " ) #will be a string
     if selected_id.upper() == "DONE":
@@ -51,3 +53,11 @@ for selected_id in selected_ids:
     matching_product = matching_products[0] # this will trigger an IndexError if there are no matching products
     total_price = total_price + matching_product["price"]
     print("SELECTED PRODUCT(S):" + matching_product["name"] + " " + str(to_usd(matching_product["price"])))
+
+tax = matching_product["price"]*.0875    
+print("---")
+print("Thank you for shopping at Al's!")
+print (now)
+print("123-456-7890")
+print ("123 Main St")
+print("---")  
