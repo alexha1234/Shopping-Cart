@@ -23,7 +23,7 @@ products = [
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}
 ] # based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
 
-
+#starter code provided
 def to_usd(my_price):
     """
     Converts a numeric value to usd-formatted string, for printing and display purposes.
@@ -39,7 +39,7 @@ def to_usd(my_price):
 selected_products = [] 
 
 while True:
-    selected_id = input("Please input a product id, or 'DONE': " )
+    selected_id = input("Please input a product id, or 'DONE': " ) #will be a stroing
 
     if selected_id.upper() == "DONE":
         break # break out of the while loop 
