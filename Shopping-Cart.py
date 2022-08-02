@@ -75,3 +75,6 @@ tax = subtotal * .0875
 print("TAX:", to_usd(tax))
 total = tax + subtotal
 print("TOTAL:", to_usd(total))
+print("---")
+print("   ")
+print("THANK YOU, PLEASE COME AGAIN SOON")
