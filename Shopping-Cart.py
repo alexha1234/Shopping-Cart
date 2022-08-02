@@ -41,7 +41,7 @@ ct = datetime.datetime.now()
 # ct stores current time
 
 selected_products = [] 
-total_price = 0
+subtotal = 0
 
 while True:
     selected_id = input("Please input a product id, or 'DONE': " )
@@ -53,10 +53,25 @@ while True:
         matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
         matching_product = matching_products[0] # this will trigger an IndexError if there are no matching products
         selected_products.append(matching_product)
-        total_price = total_price + matching_product["price"]
+        subtotal = subtotal + matching_product["price"]
         # continue the while loop
+
+print("---")
+print("THANK YOU FOR SHOPPING AT AL'S GROCERY!")
+print ("123 Main St")
+print("123-456-789")
+print("---")
+print (ct)
+print("---")
+print("    ")
+
 
 for p in selected_products:
     print (p["name"], to_usd(p["price"]))
-
-print(total_price)
+print("---")
+print("   ")
+print("SUBTOTAL:", to_usd(subtotal))
+tax = subtotal * .0875
+print("TAX:", to_usd(tax))
+total = tax + subtotal
+print("TOTAL:", to_usd(total))
