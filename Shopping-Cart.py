@@ -35,33 +35,28 @@ def to_usd(my_price):
     Returns: $4,000.44
     """
     return f"${my_price:,.2f}" #> $12,000.71
+# using datetime module
+import datetime;
+ct = datetime.datetime.now()
+# ct stores current time
 
-selected_ids = []
-matching_products = [] 
+selected_products = [] 
 total_price = 0
-from datetime import datetime #Allowing us to print date and time
-now = datetime.now()
+
 while True:
-    selected_id = input("Please input a product id, or 'DONE': " ) #will be a string
+    selected_id = input("Please input a product id, or 'DONE': " )
+
     if selected_id.upper() == "DONE":
         break # break out of the while loop 
     else:
         #print("LOOKING UP PRODUCT", selected_id)
-        selected_ids.append(selected_id)
+        matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
+        matching_product = matching_products[0] # this will trigger an IndexError if there are no matching products
+        selected_products.append(matching_product)
+        total_price = total_price + matching_product["price"]
+        # continue the while loop
 
-print("---")
-print("Thank you for shopping at Al's Grocery!")
-print (now)
-print("123-456-7890")
-print ("123 Main St")
-print("---")  
-for selected_id in selected_ids:
-    matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
-    matching_product = matching_products[0] # this will trigger an IndexError if there are no matching products
-    total_price = total_price + matching_product["price"]
-    matching_products.append(matching_products)
-    print("SELECTED PRODUCT(S):" + matching_product["name"] + " " + str(to_usd(matching_product["price"])))
-#can not get this to work outside of loop for now
+for p in selected_products:
+    print (p["name"], to_usd(p["price"]))
 
-  
-
+print(total_price)
